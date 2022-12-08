@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create New To Do</title>
+</head>
+
+<body>
+
+<!-- commit message = $ git commit -m "add three dropdow, text input for deadline, and text area for description to newTodo.html -->
+
+    <form>
+        <label for="userName">Username</label>
+        <select name="userName" id="userid">
+            <option value="">Select User Name</option>
+        </select>
+
+        <br>
+
+        <label for="category">Category</label>
+        <select name="category" id="category">
+            <option value="">Select Category</option>
+        </select>
+
+        <br>
+
+        <label for="priority">Priority level</label>
+        <select name="priority" id="priority">
+            <option value="">Low</option>
+            <option value="">Medium</option>
+            <option value="">High</option>
+        </select>
+
+        <br>
+
+        <label for="deadline">Deadline</label>
+        <input type="text" name="deadline" id="deadline">
+        <!-- <p>Note: Format yyyy/mm/dd</p> find a way to write that next to input tag -->
+
+        <br>
+
+        <label for="description">Description</label>
+        <textarea name="description" id="description" cols="30" rows="5"></textarea>
+        <!-- get a way to display the label for description higher next to the textarea -->
+
+
+    </form>
+
+
+</body>
+
+</html>
