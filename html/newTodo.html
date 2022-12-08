@@ -6,46 +6,66 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Create New To Do</title>
+    <script src="/scripts/populateDropDown.js" defer></script>
 </head>
+
 
 <body>
 
-    <h1>Create New Todo</h1>
+    <header>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="todo.html">ToDo</a>
+            <a href="newTodo.html">New ToDo</a>
+        </nav>
+        <h1>Create New Todo</h1>
+    </header>
 
-    <form id="inputData">
-        <label for="userName">Username</label>
-        <select name="userName" id="userid">
-            <option value="userName">Select User Name</option>
-        </select>
+    <main>
+        <form id="inputData">
+            <label for="userName">Username</label>
+            <select name="userName" id="userid">
+                <option value="userName">Select User Name</option>
+            </select>
 
-        <br>
 
-        <label for="category">Category</label>
-        <select name="category" id="category">
-            <option value="category">Select Category</option>
-        </select>
+            <br>
 
-        <br>
 
-        <label for="priority">Priority level</label>
-        <select name="priority" id="priority">
-            <option value="lowOption">Low</option>
-            <option value="mediumOption">Medium</option>
-            <option value="highOption">High</option>
-        </select>
+            <label for="category">Category</label>
+            <select name="category" id="category">
+                <option value="category">Select Category</option>
+            </select>
 
-        <br>
+            <br>
 
-        <label for="deadline">Deadline</label>
-        <input type="text" name="deadline" id="deadline" placeholder="YYYY/MM/DD"> 
-        
-        <br>
 
-        <textarea name="description" id="description" cols="30" rows="5" placeholder="Task Description"></textarea>
+            <label for="priority">Priority level</label>
+            <select name="priority" id="priority">
+                <option value="lowOption">Low</option>
+                <option value="mediumOption">Medium</option>
+                <option value="highOption">High</option>
+            </select>
 
-        <input type="button" value="Add New Todo">
+            <br>
 
-    </form>
+            <label for="deadline">Deadline</label>
+            <input type="text" name="deadline" id="deadline" placeholder="YYYY/MM/DD">
+
+            <br>
+
+
+            <textarea name="description" id="description" cols="30" rows="5" placeholder="Task Description"></textarea>
+
+
+            <input type="button" value="Add New Todo">
+        </form>
+    </main>
+
+
+
+
+
 
     <footer>
 
