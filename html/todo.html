@@ -33,7 +33,7 @@
      
  <form>
     <label for="viewall">View All</label>
-    <input id="viewall" type="radio" name="view" value="true">
+    <input id="viewall" checked type="radio" name="view" value="true">
     <label for="search">Search</label>
     <input type="radio" name="view" value="false">
    
@@ -70,18 +70,14 @@
         </tr>
     </thead>
     <tbody>
-        <!-- <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr> -->
+      
     </tbody>
     <script>
         let table = document.getElementById('userTable');
-        fetch('http://localhost:8083/api/todos')
+        window.addEventListener("load", fetchDataMakeTable)
+
+        function fetchDataMakeTable() {
+            fetch('http://localhost:8083/api/todos')
         .then(console.log('to do list'))
         .then(response => response.json())
         .then(data => {
@@ -119,6 +115,9 @@
                 
             }
         })
+        }
+
+        
     </script>
  </table>
 
