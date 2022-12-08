@@ -5,6 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ToDo</title>
+
+    <style>
+        th,td {
+            outline: 2px solid black;
+        }
+    </style>
 </head>
 <body>
       <!-- Category: "Personal Task"
@@ -12,7 +18,7 @@
  Deadline: "2022-12-15"
  Priority: "Medium" -->
     
-</body>
+
 <header>
     <h1>View ToDo</h1>
 <nav>
@@ -50,6 +56,72 @@
     Natus a odit autem quidem minima.</p>
 
 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus, sunt obcaecati harum accusantium cumque et. Fugiat, debitis minima, ut voluptatum cupiditate quisquam et ex dicta quis error ad. Rerum, eius!</p>
+
+
+<table id="userTable">
+    <thead>
+        <tr>
+            <th>User ID</th>
+            <th>Description</th>
+            <th>DeadLine</th>
+            <th>Category</th>
+            <th>Priority</th>
+            <th>Completed</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr> -->
+    </tbody>
+    <script>
+        let table = document.getElementById('userTable');
+        fetch('http://localhost:8083/api/todos')
+        .then(console.log('to do list'))
+        .then(response => response.json())
+        .then(data => {
+            console.log(data);
+            for (let i = 0; i < data.length; i++) {
+                let row = table.insertRow(-1);
+                let userIdCol = row.insertCell(0);
+                console.log(data[i].userid);
+                 userIdCol.innerHTML = data[i].userid;
+
+                 let desCol = row.insertCell(1);
+                console.log(data[i].description);
+                desCol.innerHTML = data[i].description;
+
+                let deadLineCol = row.insertCell(2);
+                console.log(data[i].deadline);
+                deadLineCol.innerHTML = data[i].deadline;
+
+                let categoryCol = row.insertCell(3);
+                console.log(data[i].category);
+                categoryCol.innerHTML = data[i].category;
+
+                let priorityCol = row.insertCell(4);
+                console.log(data[i].priority);
+                priorityCol.innerHTML = data[i].priority;
+
+                let completedCol = row.insertCell(5);
+                console.log(data[i].completed);
+                completedCol.innerHTML = data[i].completed;
+
+
+
+                
+            
+                
+            }
+        })
+    </script>
+ </table>
+
 
 
 
