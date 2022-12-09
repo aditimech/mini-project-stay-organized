@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Create New To Do</title>
     <script src="/scripts/populateDropDown.js" defer></script>
+    <script src="/scripts/addUserDataToServer.js" defer></script>
 </head>
 
 
@@ -23,9 +24,9 @@
 
     <main>
         <form id="inputData">
-            <label for="userName">Username</label>
-            <select name="userName" id="userid">
-                <option value="userName">Select User Name</option>
+            <label for="userid">Username</label>
+            <select name="userid" id="userid">
+                <option value="default">Select User Name</option>
             </select>
 
 
@@ -42,9 +43,9 @@
 
             <label for="priority">Priority level</label>
             <select name="priority" id="priority">
-                <option value="lowOption">Low</option>
-                <option value="mediumOption">Medium</option>
-                <option value="highOption">High</option>
+                <option value="Low">Low</option>
+                <option value="Medium">Medium</option>
+                <option value="High">High</option>
             </select>
 
             <br>
@@ -58,8 +59,11 @@
             <textarea name="description" id="description" cols="30" rows="5" placeholder="Task Description"></textarea>
 
 
-            <input type="button" value="Add New Todo">
+            <input type="submit" value="Add New Todo" id="inputBtn">
         </form>
+
+        <p id="confirmationMessage"></p>
+
     </main>
 
 

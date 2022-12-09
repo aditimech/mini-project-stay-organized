@@ -1,138 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ToDo</title>
-
+    <script src="/scripts/populateDropDown.js" defer></script>
     <style>
-        th,td {
+        th,
+        td {
             outline: 2px solid black;
         }
     </style>
 </head>
+
 <body>
-      <!-- Category: "Personal Task"
+    <!-- Category: "Personal Task"
  Description: "Finish studying for ENG 211 exam"
  Deadline: "2022-12-15"
  Priority: "Medium" -->
-    
-
-<header>
-    <h1>View ToDo</h1>
-<nav>
-    <a href="">Home</a>
-    <a href="">ToDo</a>
-    <a href="">New ToDo</a>
-</nav>
-
-</header>
-
-<main>
-     
- <form>
-    <label for="viewall">View All</label>
-    <input id="viewall" checked type="radio" name="view" value="true">
-    <label for="search">Search</label>
-    <input type="radio" name="view" value="false">
-   
-
-    <select name="todoDropdown" id="todoDropdown">
-        <option value="default"> Select User Id</option> 
-    </select>
-   
-
-    <!-- <input id="todoBtn" type="submit" value="Select Task ">  -->
 
 
+    <header>
+        <h1>View ToDo</h1>
+        <nav>
+            <a href="">Home</a>
+            <a href="">ToDo</a>
+            <a href="">New ToDo</a>
+        </nav>
 
- </form>
+    </header>
+
+    <main>
+
+        <form>
+            <label for="viewall">View All</label>
+            <input id="viewall" checked type="radio" name="view" value="true">
+            <label for="search">Search</label>
+            <input type="radio" name="view" value="false">
 
 
- <output id="output"></output>
-
- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure sequi necessitatibus labore consectetur, molestiae iste nam consequatur, beatae laboriosam, id voluptatum aspernatur sit ducimus. 
-    Natus a odit autem quidem minima.</p>
-
-<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus, sunt obcaecati harum accusantium cumque et. Fugiat, debitis minima, ut voluptatum cupiditate quisquam et ex dicta quis error ad. Rerum, eius!</p>
+            <select name="todoDropDown" id="todoDropDown">
+                <option value="default"> Select User Id</option>
+            </select>                                     
 
 
-<table id="userTable">
-    <thead>
-        <tr>
-            <th>User ID</th>
-            <th>Description</th>
-            <th>DeadLine</th>
-            <th>Category</th>
-            <th>Priority</th>
-            <th>Completed</th>
-        </tr>
-    </thead>
-    <tbody>
-      
-    </tbody>
-    <script>
-        let table = document.getElementById('userTable');
-        window.addEventListener("load", fetchDataMakeTable)
-
-        function fetchDataMakeTable() {
-            fetch('http://localhost:8083/api/todos')
-        .then(console.log('to do list'))
-        .then(response => response.json())
-        .then(data => {
-            console.log(data);
-            for (let i = 0; i < data.length; i++) {
-                let row = table.insertRow(-1);
-                let userIdCol = row.insertCell(0);
-                console.log(data[i].userid);
-                 userIdCol.innerHTML = data[i].userid;
-
-                 let desCol = row.insertCell(1);
-                console.log(data[i].description);
-                desCol.innerHTML = data[i].description;
-
-                let deadLineCol = row.insertCell(2);
-                console.log(data[i].deadline);
-                deadLineCol.innerHTML = data[i].deadline;
-
-                let categoryCol = row.insertCell(3);
-                console.log(data[i].category);
-                categoryCol.innerHTML = data[i].category;
-
-                let priorityCol = row.insertCell(4);
-                console.log(data[i].priority);
-                priorityCol.innerHTML = data[i].priority;
-
-                let completedCol = row.insertCell(5);
-                console.log(data[i].completed);
-                completedCol.innerHTML = data[i].completed;
+            <!-- <input id="todoBtn" type="submit" value="Select Task ">  -->
 
 
 
-                
-            
-                
-            }
-        })
-        }
+        </form>
 
-        
-    </script>
- </table>
+
+        <output id="output"></output>
+
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure sequi necessitatibus labore consectetur,
+            molestiae iste nam consequatur, beatae laboriosam, id voluptatum aspernatur sit ducimus.
+            Natus a odit autem quidem minima.</p>
+
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus, sunt obcaecati harum accusantium cumque
+            et. Fugiat, debitis minima, ut voluptatum cupiditate quisquam et ex dicta quis error ad. Rerum, eius!</p>
+
+
+        <table id="userTable">
+            <thead>
+                <tr>
+                    <th>User ID</th>
+                    <th>Description</th>
+                    <th>DeadLine</th>
+                    <th>Category</th>
+                    <th>Priority</th>
+                    <th>Completed</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+            <script>
+                let table = document.getElementById('userTable');
+                window.addEventListener("load", fetchDataMakeTable)
+
+                function fetchDataMakeTable() {
+                    fetch('http://localhost:8083/api/todos')
+                        .then(console.log('to do list'))
+                        .then(response => response.json())
+                        .then(data => {
+                            console.log(data);
+                            for (let i = 0; i < data.length; i++) {
+                                let row = table.insertRow(-1);
+                                let userIdCol = row.insertCell(0);
+                                console.log(data[i].userid);
+                                userIdCol.innerHTML = data[i].userid;
+
+                                let desCol = row.insertCell(1);
+                                console.log(data[i].description);
+                                desCol.innerHTML = data[i].description;
+
+                                let deadLineCol = row.insertCell(2);
+                                console.log(data[i].deadline);
+                                deadLineCol.innerHTML = data[i].deadline;
+
+                                let categoryCol = row.insertCell(3);
+                                console.log(data[i].category);
+                                categoryCol.innerHTML = data[i].category;
+
+                                let priorityCol = row.insertCell(4);
+                                console.log(data[i].priority);
+                                priorityCol.innerHTML = data[i].priority;
+
+                                let completedCol = row.insertCell(5);
+                                console.log(data[i].completed);
+                                completedCol.innerHTML = data[i].completed;
 
 
 
 
 
-</main>
+
+                            }
+                        })
+                }
 
 
-<footer>
-    
+            </script>
+        </table>
 
-</footer>
-    
+
+
+
+
+    </main>
+
+
+    <footer>
+
+
+    </footer>
+
 
 </body>
+
 </html>
