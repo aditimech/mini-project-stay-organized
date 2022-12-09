@@ -1,6 +1,6 @@
 let newUsernameEl = document.getElementById("userid");
 let categoryEl = document.getElementById("category");
-let usernameEl = document.getElementById("todoDropDown");
+let usernameEl = document.getElementById("todoDropdown");
 
 
 
@@ -17,6 +17,8 @@ fetch("http://localhost:8083/api/users")
     }
   });
 
+
+  
   fetch("http://localhost:8083/api/users")
   .then((response) => response.json())
   .then((data) => {
